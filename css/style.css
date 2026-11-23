@@ -1,0 +1,449 @@
+
+/* =====================================
+   1. CONFIGURAÇÕES GERAIS
+===================================== */
+
+:root {
+    --background: #101827;
+    --surface: #19263B;
+    --surface-hover: #243650;
+
+    --text: #F4F5F8;
+    --text-secondary: #B8C2D5;
+
+    --primary: #9675E8;
+    --border: #30415C;
+}
+
+/* Configuração do tema claro para uso futuro */
+body[data-theme="light"] {
+    --background: #F4F5F8;
+    --surface: #FFFFFF;
+    --surface-hover: #E9EAF2;
+
+    --text: #1C2433;
+    --text-secondary: #566175;
+
+    --primary: #6846B9;
+    --border: #DCE0E9;
+}
+
+/* Remove espaços padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações da página */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================
+   2. CABEÇALHO E MENU
+===================================== */
+
+header {
+    background-color: var(--background);
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1100px;
+    width: 90%;
+    min-height: 75px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu a {
+    color: var(--text-secondary);
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--primary);
+}
+
+
+/* =====================================
+   3. CONTEÚDO PRINCIPAL
+===================================== */
+
+main {
+    width: 100%;
+}
+
+main > section {
+    max-width: 1100px;
+    width: 90%;
+    margin: auto;
+    padding: 75px 0;
+}
+
+section h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+section > p {
+    color: var(--text-secondary);
+}
+
+
+/* =====================================
+   4. APRESENTAÇÃO INICIAL
+===================================== */
+
+#inicio {
+    min-height: 520px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#inicio > p:first-child {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#inicio h1 {
+    font-size: 52px;
+    margin: 12px 0;
+}
+
+#inicio h2 {
+    color: var(--primary);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#inicio p {
+    max-width: 700px;
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+}
+
+#inicio a {
+    display: inline-block;
+    padding: 11px 18px;
+    margin: 5px 8px 5px 0;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#inicio a:first-of-type {
+    background-color: var(--primary);
+    color: white;
+}
+
+#inicio a:last-of-type {
+    border: 1px solid var(--primary);
+    color: var(--text);
+}
+
+#inicio a:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
+
+/* =====================================
+   5. SOBRE MIM E MINHA JORNADA
+===================================== */
+
+#sobre p,
+#jornada p {
+    max-width: 850px;
+}
+
+
+/* =====================================
+   6. INTERESSES
+===================================== */
+
+#interesses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#interesses h2,
+#interesses > p {
+    grid-column: 1 / -1;
+}
+
+#interesses article {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+    transition: 0.3s;
+}
+
+#interesses article:hover {
+    background-color: var(--surface-hover);
+    transform: translateY(-4px);
+}
+
+#interesses article h3 {
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+#interesses article p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* =====================================
+   7. HABILIDADES
+===================================== */
+
+#habilidades ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    list-style: none;
+    margin-top: 25px;
+}
+
+#habilidades li {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    padding: 12px 22px;
+    color: var(--primary);
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+#habilidades li:hover {
+    background-color: var(--surface-hover);
+    transform: translateY(-3px);
+}
+
+
+/* =====================================
+   8. PROJETOS
+===================================== */
+
+#projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+#projetos h2,
+#projetos > p {
+    grid-column: 1 / -1;
+}
+
+#projetos article {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    padding: 24px;
+    transition: 0.3s;
+}
+
+#projetos article:hover {
+    background-color: var(--surface-hover);
+    transform: translateY(-4px);
+}
+
+#projetos article h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+#projetos article p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+
+/* =====================================
+   9. RODAPÉ
+===================================== */
+
+footer {
+    background-color: var(--surface);
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+    padding: 30px 15px;
+
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+footer a {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--primary);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* BOTÃO DE ALTERAÇÃO DE TEMA */
+
+#theme-toggle {
+    background-color: var(--surface);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    padding: 9px 12px;
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+#theme-toggle:hover {
+    background-color: var(--surface-hover);
+}
+/* MENU RESPONSIVO */
+
+.menu-toggle {
+    display: none;
+    background-color: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+/* DESTAQUE AO NAVEGAR PELO TECLADO */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+/* ANIMAÇÃO DE ENTRADA DAS SEÇÕES */
+
+.revelar {
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: opacity 0.6s ease,
+                transform 0.6s ease;
+}
+
+/* Quando a seção aparece na tela */
+
+.revelar.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================================
+   IMAGENS DOS PROJETOS
+===================================== */
+
+/* Imagem da oficina */
+
+#projetos .project-cover {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background-color: var(--surface-hover);
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Imagens dos outros projetos */
+
+#projetos .project-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#projetos .project-images img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    background-color: var(--surface-hover);
+    border-radius: 8px;
+}
+
+
+/* BOTÕES DOS PROJETOS NO GITHUB */
+
+#projetos .project-link {
+    display: inline-block;
+
+    margin-top: 12px;
+    padding: 10px 16px;
+
+    background-color: var(--primary);
+    color: #FFFFFF;
+
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+#projetos .project-link:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
